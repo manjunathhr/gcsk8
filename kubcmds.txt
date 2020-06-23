@@ -1,0 +1,505 @@
+    1  top
+    2  sudo cat /proc/meminfo 
+    3  sudo fdisk -l
+    4  sudo snap install maas --channel=2.7
+    5  sudo snap kubectl --classic
+    6  sudo snap install  kubectl --classic
+    7  kubectl version --client
+    8  grep 
+    9  -E --color 'vmx|svm' /proc/cpuinfo 
+   10  grep -E --color 'vmx|svm' /proc/cpuinfo 
+   11  egrep -c '(vmx|svm)' /proc/cpuinfo
+   12  cat /sys/hypervisor/properties/capabilities
+   13  egrep -c ' lm ' /proc/cpuinfo
+   14  sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+   15  sudo adduser `id -un` libvirtd
+   16  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+   17  groups
+   18  sudo adduser `id -un` libvirt
+   19  groups
+   20  sudo adduser `id -un` kvm
+   21  groups
+   22  sudo adduser `id -un` libvirtd
+   23  sudo adduser `id -un` libvirt
+   24  groups
+   25  sudo adduser `id -un` kvm
+   26  groups
+   27  virsh list --all
+   28  sudo ls -la /var/run/libvirt/libvirt-sock
+   29  ls -l /dev/kvm
+   30  sudo apt-get install virt-manager
+   31  sudo apt install cpu-checker
+   32  sudo kvm-ok
+   33  sudo apt update
+   34  sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
+   35  sudo service libvirtd start
+   36  sudo update-rc.d libvirtd enable
+   37  service libvirtd status
+   38  sudo systemctl libvirtd enable
+   39  sudo systemctl enable libvirtd
+   40  clear
+   41  sudo apt -y install qemu-kvm libvirt-daemon bridge-utils virtinst libvirt-daemon-system
+   42  sudo apt -y install virt-top libguestfs-tools libosinfo-bin  qemu-system virt-manager
+   43  sudo modprobe vhost_net
+   44  lsmod | grep vhost
+   45  sudo cp /etc/network/interfaces /etc/network/interfaces.org
+   46  sudo vi /etc/network/interfaces
+   47  exit
+   48  cat .ssh/id_rsa.pub 
+   49  clear
+   50  ls
+   51  cd .ssh/
+   52  ls
+   53  rm id_rsa id_rsa.pub 
+   54  clear
+   55  ssh-keygen -t rsa -b 4096
+   56  ls -l
+   57  cat id_rsa.pub 
+   58  ip a
+   59  sudo vi /etc/ssh/sshd_config 
+   60  sudo reboot
+   61  docker info
+   62  docker ps
+   63  docker images
+   64  ls -l /var/run/docker
+   65  sudo ls -l /var/run/docker.sock 
+   66  docker ps
+   67  docker images
+   68  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   69  sudo chmod +x /usr/local/bin/docker-compose
+   70  docker-compose --version
+   71  docker ps
+   72  cd kube/
+   73  ls
+   74  cd simple8s/
+   75  vi start.sh
+   76  vi stop.sh
+   77  chmod +x start.sh stop.sh 
+   78  ./stop.sh 
+   79  ./start.sh 
+   80  kubectl get pods
+   81  docker ps
+   82  docker ps -a
+   83  docker ps
+   84  docker images
+   85  clear
+   86  docker ps
+   87  sudo apt  install docker.io
+   88  docker ps
+   89  sudo systemctl enable --now docker
+   90  sudo usermod -aG docker SOMEUSERNAME
+   91  sudo usermod -aG docker docker2
+   92  docker --version
+   93  docker ps
+   94  docker run hello-world
+   95  sudo groupadd docker
+   96  sudo usermod -aG docker docker2
+   97  su -s ${USER}
+   98  docker run hello-world
+   99  sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+  100  newgrp docker
+  101  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube
+  102  sudo mkdir -p /usr/local/bin/
+  103  sudo install minikube /usr/local/bin/
+  104  minikube config set driver kvm2
+  105  minikube start --driver=kvm2
+  106  minikube status
+  107  mkdir minikube
+  108  ls
+  109  vi minikube 
+  110  ls -lrt
+  111  ls -l
+  112  rm minikube 
+  113  mkdir kube
+  114  cd kube/
+  115  ls
+  116  vi start-mini.sh
+  117  vi stop-mini.sh
+  118  chmod +x start-mini.sh stop-mini.sh 
+  119  ./stop-mini.sh 
+  120  ./start-mini.sh 
+  121  clear
+  122  kubectl cluster-info
+  123  minikube dashboard
+  124  mkdir simple8s
+  125  cd simple8s/
+  126  ip a
+  127  sudo apt-get install open-ssh
+  128  sudo apt-get install open-ssh-sever
+  129  sudo apt-get install openssh-sever
+  130  sudo apt-get install openssh-server
+  131  cd 
+  132  ssh-keygen -t rsa
+  133  ssh-copy-id sunkube@devops
+  134  ssh-copy-id sunkube@192.168.1.108
+  135  ip a
+  136  exit
+  137  cd .ssh/
+  138  ls
+  139  ls -lrt
+  140  scp id_rsa.pub sunkube@devops:/tmp
+  141  cat id_rsa.pub 
+  142  exit
+  143  sudo vi /etc/ssh/sshd_config 
+  144  cat id_rsa.pub 
+  145  clear
+  146  #
+  147  clear
+  148  sudo vi /etc/ssh/sshd_config 
+  149  cd .ssh/
+  150  ls
+  151  ls -l
+  152  cat id_rsa.pub 
+  153  cat id_rsa
+  154  sudo vi /etc/ssh/sshd_config 
+  155  sudo service sshd restart
+  156  sudo systemctl status ssh.service
+  157  journalctl -xe
+  158  sudo vi /etc/ssh/sshd_config 
+  159  sudo service sshd restart
+  160  ls -dZ ~user/.ssh
+  161  udo systemctl status ssh.service
+  162  sudo vi /etc/ssh/sshd_config 
+  163  udo systemctl status ssh.service
+  164  sudo service sshd restart
+  165  sudo systemctl status ssh.service
+  166  ls
+  167  ssh-copy-id -i ~/.ssh/id_rsa.pub subkube@devops
+  168  sudo ssh-copy-id -i ~/.ssh/id_rsa.pub subkube@devops
+  169  ssh-copy-id -i ~/.ssh/id_rsa.pub subkube@devops
+  170  ssh-copy-id -i ~/.ssh/id_rsa.pub sunkube@devops
+  171  cd 
+  172  ls
+  173  cd kube/
+  174  ls
+  175  cd simple8s/
+  176  ls
+  177  ll
+  178  ./start.sh 
+  179  kubectl get pods
+  180  cd ../
+  181  ls
+  182  ./start-mini.sh 
+  183  kubectl get pods
+  184  ls
+  185  cd simple8s/
+  186  ls
+  187  ./start.sh 
+  188  ll
+  189  cat kubectl-cmd.txt 
+  190  clear
+  191  ll
+  192  docker ps
+  193  docker ps -a
+  194  docker images
+  195  kubectl get services
+  196  netstat -apn
+  197  sudo apt install net-tools
+  198  netstat -apn | grep 31515
+  199  netstat -apn 
+  200  netstat -apn | grep 3000
+  201  sudo netstat -apn | grep 3000
+  202  sudo netstat -apn | grep 31515
+  203  kubectl get pods
+  204  docker ps
+  205  kubectl get pods
+  206  docker ps
+  207  cd kube/
+  208  ls
+  209  cd simple8s/
+  210  kubectl apply -f client-pod.yaml 
+  211  kubectl get pods
+  212  clear
+  213  ls
+  214  kubectl apply -f client-pod.yaml 
+  215  kubectl get pods
+  216  kubectl delete -f client-pod.yaml 
+  217  kubectl get pods
+  218  kubectl get pod
+  219  kubectl get svc
+  220  kubectl delete -f client-node-port.yaml 
+  221  kubectl get svc
+  222  kubectl apply -f client-deployment.yaml 
+  223  kubectl get pods
+  224  kubectl get deployments
+  225  clear
+  226  minikube  ip
+  227  kubectl get pods -o wide
+  228  kubectl get pods
+  229  kubectl get svc
+  230  kubectl apply -f client-node-port.yaml 
+  231  kubectl get pods
+  232  kubectl get svc
+  233  kubectl delete -f client-deployment.yaml 
+  234  kubectl apply -f client-deployment.yaml 
+  235  kubectl get svc
+  236  kubectl get pods
+  237  kubectl get logs client-deployment
+  238  kubectl logs client-deployment
+  239  kubectl get pods
+  240  kubectl logs client-deployment-*
+  241  kubectl logs client-deployment-77c5b885cf-ld756
+  242  kubectl get pods -o wide
+  243  kubectl get deployments
+  244  kubectl delete -f client-deployment.yaml 
+  245  kubectl apply -f client-deployment.yaml 
+  246  kubectl get pods -o wide
+  247  minikube  ip
+  248  kubectl get svc
+  249  kubectl delete -f client-deployment.yaml 
+  250  kubectl apply -f client-deployment.yaml 
+  251  docker ps
+  252  clear
+  253  kubectl describe pod
+  254  kubectl get svc
+  255  kubectl describe pod
+  256  ls
+  257  cd kube/
+  258  ls
+  259  ./start-mini.sh 
+  260  clear
+  261  kubectl get svc
+  262  kubectl describe pod
+  263  kubectl get pod
+  264  ls
+  265  cd kube/
+  266  ls
+  267  cd simple8s/
+  268  ls
+  269  kubectl get pods
+  270  kubectl get deployments
+  271  kubectl apply -f client-deployment.yaml 
+  272  kubectl get deployments
+  273  kubectl describe pods
+  274  kubectl apply -f client-deployment.yaml 
+  275  kubectl get deployments
+  276  kubectl get pods
+  277  kubectl apply -f client-deployment.yaml 
+  278  kubectl get deployments
+  279  kubectl get pods
+  280  kubectl get deployments
+  281  kubectl get pods
+  282  kubectl apply -f client-deployment.yaml 
+  283  kubectl get pods
+  284  kubectl get deployments
+  285  kubectl get pods
+  286  cd kube/
+  287  ./start-mini.sh 
+  288  cd .ssh
+  289  ls
+  290  vi authorized_keys
+  291  chmod 400 authorized_keys 
+  292  cd ../
+  293  chmod 700 .ssh/
+  294  clear
+  295  cd .ssh/
+  296  ls
+  297  ls -lr
+  298  ls -lrt
+  299  vi authorized_keys 
+  300  ls
+  301  sudo chmod 600 authorized_keys 
+  302  vi authorized_keys 
+  303  clear
+  304  ls -lrt
+  305  clear
+  306  exit
+  307  clear
+  308  exit
+  309  clear
+  310  exit
+  311  sudo vi /etc/ssh/ssh_config 
+  312  sudo vi /etc/ssh/sshd_config 
+  313  sudo systemctl status ssh.service
+  314  clear
+  315  sudo service sshd restart
+  316  docker login
+  317  clear
+  318  ls
+  319  docker images
+  320  cd kube/
+  321  ls
+  322  cd simple8s/
+  323  ls
+  324  docker-compose build
+  325  docker-compose build -t
+  326  docker-compose build 
+  327  docker-compose build .
+  328  ls
+  329  clear
+  330  ls
+  331  cd ../
+  332  mkdir maven
+  333  cd maven/
+  334  ls
+  335  vi docker-compose.yml
+  336  cd ../
+  337  ls
+  338  mkdir docker
+  339  cd docker/
+  340  ls
+  341  mkdir jenkins0H
+  342  cd jenkins0H/
+  343  ls
+  344  mv ../../kube/maven/ .
+  345  cd maven/
+  346  ls
+  347  vi export.auth.sh
+  348  chmod +x export.auth.sh 
+  349  ./export.auth.sh 
+  350  vi export.auth.sh
+  351  . export.auth.sh 
+  352  echo $IMAGE 
+  353  echo $PASSWD 
+  354  echo $PASSWD
+  355  ./export.auth.sh 
+  356  echo $PASSWD
+  357  vi export.auth.sh
+  358  ./export.auth.sh 
+  359  echo $PASSWD
+  360  . .export.auth.sh 
+  361  . export.auth.sh 
+  362  echo $PASSWD
+  363  vi export.auth.sh
+  364  clear
+  365  docker login -u manjunathhr -p $PASSWD
+  366  cat docker-compose.yml 
+  367  docker-compose up -d
+  368  vi verify-deployment-prod.sh
+  369  chmod +x verify-deployment-prod.sh 
+  370  ./verify-deployment-prod.sh 
+  371  clear
+  372  ls
+  373  lll
+  374  ls -lrt
+  375  vi export.auth.sh 
+  376  cp export.auth.sh publish
+  377  cd ../
+  378  mv maven/publish .
+  379  clear
+  380  vi publish 
+  381  mv publish maven/
+  382  cd maven/
+  383  ls
+  384  vi publish 
+  385  ./publish 
+  386  pwd
+  387  vi publish 
+  388  ./publish 
+  389  vi publish 
+  390  ./publish 
+  391  pwd
+  392  echo $HOME
+  393  exit
+  394  docker ps -fe
+  395  docker ps 
+  396  cd -
+  397  exit
+  398  cd /tmp/
+  399  ls
+  400  s -lrt
+  401  ls -lrt
+  402  cat publish 
+  403  cd ~/jenkins0H/maven
+  404  cd 
+  405  ls
+  406  ls -lrt
+  407  cd docker/
+  408  ls
+  409  cd jenkins0H/
+  410  ls
+  411  exit
+  412  docker login -u manjunathhr -p $PASSWD
+  413  cd docker/jenkins0H/
+  414  ls
+  415  cd maven/
+  416  ls
+  417  ./va
+  418  ./verify-deployment-prod.sh 
+  419  cat verify-deployment-prod.sh 
+  420  docker ps
+  421  clear
+  422  ll
+  423  docker ps
+  424  docker ps -a
+  425  docker images
+  426  docker run 38e9
+  427  docker run manjunathhr:/maven-project
+  428  cd /tmp/
+  429  ls
+  430  cat publish 
+  431  ./publish 
+  432  docker ps
+  433  cd 
+  434  cd docker/jenkins0H/maven/
+  435  ls
+  436  vi publish 
+  437  ./publish 
+  438  docker ps 
+  439  docker ps -a
+  440  docker logs maven-app
+  441  exi
+  442  clear
+  443  docker ps
+  444  ls
+  445  cd docker/
+  446  ls
+  447  cd 
+  448  ls
+  449  cd kube/
+  450  ls
+  451  ./stop-mini.sh 
+  452  minikube start --driver=docker
+  453  minikube delete
+  454  minikube start --driver=docker
+  455  clear
+  456  ls
+  457  cd simple8s/
+  458  ls
+  459  ll
+  460  kubectl apply -f client-deployment.yaml
+  461  kubectl get pods
+  462  ls
+  463  cat kubectl-cmd.txt | grep delete
+  464  kubectl delete -f ./client-deployment.yaml 
+  465  clear
+  466  kubectl apply -f client-deployment.yaml
+  467  docker ps
+  468  sudo dpkg-reconfigure gdm
+  469  exit
+  470  clear
+  471  docker ps
+  472  exit
+  473  clear
+  474  ls
+  475  cd docker/
+  476  ls
+  477  cd ../kube/
+  478  ls
+  479  ls -lrt
+  480  scp sunkube@devops://home/sunkube/docker/docKubCom/complexKub.tar .
+  481  tar xvf complexKub.tar .
+  482  tar xvf complexKub.tar 
+  483  cd complexKub/
+  484  ls
+  485  kubectl get pods
+  486  kubectl get deployments
+  487  kubectl delete deployment client-deployment
+  488  kubectl get deployments
+  489  clear
+  490  kubectl get deployments
+  491  kubectl get pods
+  492  kubectl get services
+  493  kubectl get svc
+  494  kubectl delete service client-node-port
+  495  kubectl get svc
+  496  clear
+  497  kubectl  apply -f k8s/client-deployment.yaml 
+  498  kubectl get deployments
+  499  kubectl get pod
+  500  kubectl get services
+  501  kubectl  apply -f k8s/
+  502  kubectl get pod
+  503  kubectl get services
+  504  kubectl get deployments
+  505  history | tee kubcmds.txt
